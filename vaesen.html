@@ -1,0 +1,513 @@
+<div class="sheet-container">
+    <div class="sheet-flex">
+        <div class="sheet-col70 sheet-colspace">
+            <div class="sheet-header sheet-flex">
+                <div class="sheet-col100">
+                    <input type="text" name="attr_CharacterName"/>
+                    <div class="sheet-text sheet-label sheet-title">Name</div>
+                </div>
+                <div class="sheet-col70 sheet-colspace">
+                    <input type="text" name="attr_Archetype"/>
+                    <div class="sheet-text sheet-label sheet-title">Archetype</div>
+                </div>
+                <div class="sheet-col30">
+                    <input type="text" name="attr_Age"/>
+                    <div class="sheet-text sheet-label sheet-title">Age</div>
+                </div>
+                <div class="sheet-col100">
+                    <input type="text" name="attr_Motivation"/>
+                    <div class="sheet-text sheet-label sheet-title">Motivation</div>
+                </div>
+                <div class="sheet-col100">
+                    <input type="text" name="attr_Trauma"/>
+                    <div class="sheet-text sheet-label sheet-title">Trauma</div>
+                </div>
+                <div class="sheet-col100">
+                    <input type="text" name="attr_DarkSecret"/>
+                    <div class="sheet-text sheet-label sheet-title">Dark Secret</div>
+                </div>
+            </div>
+            <div class="sheet-section">
+                <h4>Relationships</h4>
+                <fieldset class="repeating_relationships">
+                    <div class="sheet-flex">
+                        <div class="sheet-col30 sheet-colspace">
+                            <input type="text" name="attr_RelationshipCharacter" />
+                            <div class="sheet-text sheet-label sheet-title">Character</div>
+                        </div>
+                        <div class="sheet-col70">
+                            <input type="text" name="attr_Relationship" />
+                            <div class="sheet-text sheet-label sheet-title">Relationship</div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="sheet-section">
+                <div class="sheet-flex sheet-col100">
+                    <div class="sheet-col50 sheet-colspace">
+                        <h4>Talents</h4>
+                        <fieldset class="repeating_talents">
+                            <input type="text" name="attr_Talent" />
+                        </fieldset>
+                    </div>
+                    <div class="sheet-col50">
+                        <h4>Insights & Defects</h4>
+                        <fieldset class="repeating_insightsdefects">
+                            <input type="text" name="attr_InsightDefect" />
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="sheet-flex sheet-col100">
+                    <div class="sheet-col50 sheet-colspace">
+                        <h4>Advantages</h4>
+                        <fieldset class="repeating_advantages">
+                            <div class="sheet-flex">
+                                <div class="sheet-col10 sheet-colspace sheet-advantagebox">
+                                    <label><input class="sheet-checkbox sheet-large" type="checkbox" name="attr_AdvantageUsed" value="1" /><span></span></label>
+                                </div>
+                                <div class="sheet-col90">
+                                    <input type="text" name="attr_Advantage" />
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="sheet-col50">
+                        <h4>Mementos</h4>
+                        <fieldset class="repeating_mementos">
+                            <input type="text" name="attr_Memento" />
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <div class="sheet-section">
+                <div>
+                    <h4>Equipment</h4>
+                    <fieldset class="repeating_equipment">
+                        <div class="sheet-flex">
+                            <div class="sheet-col85 sheet-colspace">
+                                <input type="text" name="attr_EquipmentName" />
+                                <div class="sheet-text sheet-label sheet-title">Item</div>
+                            </div>
+                            <div class="sheet-col15">
+                                <input type="text" name="attr_EquipmentBonus" />
+                                <div class="sheet-text sheet-label sheet-title">Bonus</div>
+                            </div>
+                        </div>
+                        
+                    </fieldset>
+                </div>
+                <div>
+                    <h4>Armor</h4>
+                    <div class="sheet-flex">
+                        <div class="sheet-col60 sheet-colspace">
+                            <input type="text" name="attr_ArmorType"/>
+                            <div class="sheet-text sheet-label sheet-title">Armor Type</div>
+                        </div>
+                        <div class="sheet-col20 sheet-colspace">
+                            <input type="text" name="attr_ArmorProtection"/>
+                            <div class="sheet-text sheet-label sheet-title">Protection</div>
+                        </div>
+                        <div class="sheet-col20">
+                            <input type="text" name="attr_ArmorAgility"/>
+                            <div class="sheet-text sheet-label sheet-title">Agility</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4>Weapons</h4>
+                    <fieldset class="repeating_weapons">
+                        <div class="sheet-flex">
+                            <div class="sheet-col55 sheet-colspace">
+                                <input type="text" name="attr_WeaponName" />
+                                <div class="sheet-text sheet-label sheet-title">Weapon</div>
+                            </div>
+                            <div class="sheet-col15 sheet-colspace">
+                                <input type="text" name="attr_WeaponDamage" />
+                                <div class="sheet-text sheet-label sheet-title">Damage</div>
+                            </div>
+                            <div class="sheet-col15 sheet-colspace">
+                                <input type="text" name="attr_WeaponRange" />
+                                <div class="sheet-text sheet-label sheet-title">Range</div>
+                            </div>
+                            <div class="sheet-col15">
+                                <input type="text" name="attr_WeaponBonus" />
+                                <div class="sheet-text sheet-label sheet-title">Bonus</div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <div class="sheet-col30">
+            <div class="sheet-section">
+                <h4>Experience</h4>
+                <div class="sheet-statpoints">
+                    <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Experience" value="0" checked="checked"/>
+                    <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Experience" value="1"/><span></span>
+                    <div class="sheet-floatingbar"></div>
+                    <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Experience" value="2"/><span></span>
+                    <div class="sheet-floatingbar"></div>
+                    <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Experience" value="3"/><span></span>
+                    <div class="sheet-floatingbar"></div>
+                    <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Experience" value="4"/><span></span>
+                    <div class="sheet-floatingbar"></div>
+                    <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Experience" value="5"/><span></span>
+                    <div class="sheet-floatingbar"></div>
+                    <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Experience" value="6"/><span></span>
+                    <div class="sheet-floatingbar"></div>
+                    <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Experience" value="7"/><span></span>
+                    <div class="sheet-floatingbar"></div>
+                    <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Experience" value="8"/><span></span>
+                    <div class="sheet-floatingbar"></div>
+                    <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Experience" value="9"/><span></span>
+                    <div class="sheet-floatingbar"></div>
+                    <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Experience" value="10"/><span></span>
+                </div>
+            </div>
+            <div class="sheet-section">
+                <h4>Attributes</h4>
+                <div class="sheet-flex">
+                    <div class="sheet-col50 sheet-colspace">
+                        Physique
+                    </div>
+                    <div class="sheet-col50 sheet-statpoints">
+                        <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Physique" value="0" checked="checked"/>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Physique" value="1"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Physique" value="2"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Physique" value="3"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Physique" value="4"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Physique" value="5"/><span></span>
+                    </div>
+                </div>
+                <div class="sheet-flex">
+                    <div class="sheet-col50 sheet-colspace">
+                        Precision
+                    </div>
+                    <div class="sheet-col50 sheet-statpoints">
+                        <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Precision" value="0" checked="checked"/>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Precision" value="1"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Precision" value="2"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Precision" value="3"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Precision" value="4"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Precision" value="5"/><span></span>
+                    </div>
+                </div>
+                <div class="sheet-flex">
+                    <div class="sheet-col50 sheet-colspace">
+                        Logic
+                    </div>
+                    <div class="sheet-col50 sheet-statpoints">
+                        <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Logic" value="0" checked="checked"/>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Logic" value="1"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Logic" value="2"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Logic" value="3"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Logic" value="4"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Logic" value="5"/><span></span>
+                    </div>
+                </div>
+                <div class="sheet-flex">
+                    <div class="sheet-col50 sheet-colspace">
+                        Empathy
+                    </div>
+                    <div class="sheet-col50 sheet-statpoints">
+                        <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Empathy" value="0" checked="checked"/>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Empathy" value="1"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Empathy" value="2"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Empathy" value="3"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Empathy" value="4"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Empathy" value="5"/><span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="sheet-section">
+                <div class="sheet-flex">
+                    <div class="sheet-col50 sheet-colspace">
+                        <div><input type="text" name="attr_Resources"/></div>
+                        <div class="sheet-text sheet-label sheet-title">Resources</div>
+                    </div>
+                    <div class="sheet-col50 ">
+                        <div><input type="text" name="attr_Capital"/></div>
+                        <div class="sheet-text sheet-label sheet-title">Capital</div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="sheet-section">
+                <h4>Conditions</h4>
+                <div>
+                    <h5>Physical</h5>
+                    <div class="sheet-flex">
+                        <div class="sheet-col50 sheet-colspace">
+                            <div class="sheet-condition">
+                                <label class="sheet-conditionbox"><input class="sheet-checkbox" type="checkbox" name="attr_Exhausted" value="1" /><span></span></label>
+                                Exhausted
+                            </div>
+                        </div>
+                        <div class="sheet-col50">
+                            <div class="sheet-condition sheet-brokencondition">
+                                <label class="sheet-conditionbox"><input class="sheet-checkbox" type="checkbox" name="attr_PhysicalBroken" value="1" /><span></span></label>
+                                Broken
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-condition">
+                        <label class="sheet-conditionbox"><input class="sheet-checkbox" type="checkbox" name="attr_Battered" value="1" /><span></span></label>
+                        Battered
+                    </div>
+                    <div class="sheet-condition">
+                        <label class="sheet-conditionbox"><input class="sheet-checkbox" type="checkbox" name="attr_Wounded" value="1" /><span></span></label>
+                        Wounded
+                    </div>
+                </div>
+                <div>
+                    <h5>Mental</h5>
+                    <div class="sheet-flex">
+                        <div class="sheet-col50 sheet-colspace">
+                            <div class="sheet-condition">
+                                <label class="sheet-conditionbox"><input class="sheet-checkbox" type="checkbox" name="attr_Angry" value="1" /><span></span></label>
+                                Angry
+                            </div>
+                        </div>
+                        <div class="sheet-col50">
+                            <div class="sheet-condition sheet-brokencondition">
+                                <label class="sheet-conditionbox"><input class="sheet-checkbox" type="checkbox" name="attr_MentalBroken" value="1" /><span></span></label>
+                                Broken
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-condition">
+                        <label class="sheet-conditionbox"><input class="sheet-checkbox" type="checkbox" name="attr_Frightened" value="1" /><span></span></label>
+                        Frightened
+                    </div>
+                    <div class="sheet-condition">
+                        <label class="sheet-conditionbox"><input class="sheet-checkbox" type="checkbox" name="attr_Hopeless" value="1" /><span></span></label>
+                        Hopeless
+                    </div>
+                </div>
+            </div>
+            <div class="sheet-section">
+                <h4>Skills</h4>
+                <div class="sheet-flex">
+                    <div class="sheet-col60 sheet-colspace">
+                        <button type="roll" value="&{template:default} {{name=Agility}} {{successes=[[(@{Physique}+@{Agility}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Exhausted}+@{Battered}+@{Wounded})|Yes,0})d6>6]]}}">Agility (Ph)</button>
+                    </div>
+                    <div class="sheet-col40 sheet-statpoints">
+                        <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Agility" value="0" checked="checked"/>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Agility" value="1"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Agility" value="2"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Agility" value="3"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Agility" value="4"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Agility" value="5"/><span></span>
+                    </div>
+                </div>
+                <div class="sheet-flex">
+                    <div class="sheet-col60 sheet-colspace">
+                        <button type="roll" value="&{template:default} {{name=Close Combat}} {{successes=[[(@{Physique}+@{CloseCombat}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Exhausted}+@{Battered}+@{Wounded})|Yes,0})d6>6]]}}">Close Combat (Ph)</button>
+                    </div>
+                    <div class="sheet-col40 sheet-statpoints">
+                        <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_CloseCombat" value="0" checked="checked"/>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_CloseCombat" value="1"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_CloseCombat" value="2"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_CloseCombat" value="3"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_CloseCombat" value="4"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_CloseCombat" value="5"/><span></span>
+                    </div>
+                </div>
+                <div class="sheet-flex">
+                    <div class="sheet-col60 sheet-colspace">
+                        <button type="roll" value="&{template:default} {{name=Force}} {{successes=[[(@{Physique}+@{Force}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Exhausted}+@{Battered}+@{Wounded})|Yes,0})d6>6]]}}">Force (Ph)</button>
+                    </div>
+                    <div class="sheet-col40 sheet-statpoints">
+                        <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Force" value="0" checked="checked"/>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Force" value="1"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Force" value="2"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Force" value="3"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Force" value="4"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Force" value="5"/><span></span>
+                    </div>
+                </div>
+                <div class="sheet-flex">
+                    <div class="sheet-col60 sheet-colspace">
+                        <button type="roll" value="&{template:default} {{name=Medicine}} {{successes=[[(@{Precision}+@{Medicine}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Exhausted}+@{Battered}+@{Wounded})|Yes,0})d6>6]]}}">Medicine (Pr)</button>
+                    </div>
+                    <div class="sheet-col40 sheet-statpoints">
+                        <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Medicine" value="0" checked="checked"/>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Medicine" value="1"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Medicine" value="2"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Medicine" value="3"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Medicine" value="4"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Medicine" value="5"/><span></span>
+                    </div>
+                </div>
+                <div class="sheet-flex">
+                    <div class="sheet-col60 sheet-colspace">
+                        <button type="roll" value="&{template:default} {{name=Ranged Combat}} {{successes=[[(@{Precision}+@{RangedCombat}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Exhausted}+@{Battered}+@{Wounded})|Yes,0})d6>6]]}}">Ranged Combat (Pr)</button>
+                    </div>
+                    <div class="sheet-col40 sheet-statpoints">
+                        <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_RangedCombat" value="0" checked="checked"/>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_RangedCombat" value="1"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_RangedCombat" value="2"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_RangedCombat" value="3"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_RangedCombat" value="4"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_RangedCombat" value="5"/><span></span>
+                    </div>
+                </div>
+                <div class="sheet-flex">
+                    <div class="sheet-col60 sheet-colspace">
+                        <button type="roll" value="&{template:default} {{name=Stealth}} {{successes=[[(@{Precision}+@{Stealth}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Exhausted}+@{Battered}+@{Wounded})|Yes,0})d6>6]]}}">Stealth (Pr)</button>
+                    </div>
+                    <div class="sheet-col40 sheet-statpoints">
+                        <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Stealth" value="0" checked="checked"/>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Stealth" value="1"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Stealth" value="2"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Stealth" value="3"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Stealth" value="4"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Stealth" value="5"/><span></span>
+                    </div>
+                </div>
+                <div class="sheet-flex">
+                    <div class="sheet-col60 sheet-colspace">
+                        <button type="roll" value="&{template:default} {{name=Investigation}} {{successes=[[(@{Logic}+@{Investigation}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Angry}+@{Frightened}+@{Hopeless})|Yes,0})d6>6]]}}">Investigation (Lo)</button>
+                    </div>
+                    <div class="sheet-col40 sheet-statpoints">
+                        <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Investigation" value="0" checked="checked"/>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Investigation" value="1"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Investigation" value="2"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Investigation" value="3"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Investigation" value="4"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Investigation" value="5"/><span></span>
+                    </div>
+                </div>
+                <div class="sheet-flex">
+                    <div class="sheet-col60 sheet-colspace">
+                        <button type="roll" value="&{template:default} {{name=Learning}} {{successes=[[(@{Logic}+@{Learning}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Angry}+@{Frightened}+@{Hopeless})|Yes,0})d6>6]]}}">Learning (Lo)</button>
+                    </div>
+                    <div class="sheet-col40 sheet-statpoints">
+                        <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Learning" value="0" checked="checked"/>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Learning" value="1"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Learning" value="2"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Learning" value="3"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Learning" value="4"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Learning" value="5"/><span></span>
+                    </div>
+                </div>
+                <div class="sheet-flex">
+                    <div class="sheet-col60 sheet-colspace">
+                        <button type="roll" value="&{template:default} {{name=Vigilance}} {{successes=[[(@{Logic}+@{Vigilance}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Angry}+@{Frightened}+@{Hopeless})|Yes,0})d6>6]]}}">Vigilance (Lo)</button>
+                    </div>
+                    <div class="sheet-col40 sheet-statpoints">
+                        <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Vigilance" value="0" checked="checked"/>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Vigilance" value="1"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Vigilance" value="2"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Vigilance" value="3"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Vigilance" value="4"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Vigilance" value="5"/><span></span>
+                    </div>
+                </div>
+                <div class="sheet-flex">
+                    <div class="sheet-col60 sheet-colspace">
+                        <button type="roll" value="&{template:default} {{name=Inspiration}} {{successes=[[(@{Empathy}+@{Inspiration}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Angry}+@{Frightened}+@{Hopeless})|Yes,0})d6>6]]}}">Inspiration (Em)</button>
+                    </div>
+                    <div class="sheet-col40 sheet-statpoints">
+                        <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Inspiration" value="0" checked="checked"/>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Inspiration" value="1"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Inspiration" value="2"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Inspiration" value="3"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Inspiration" value="4"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Inspiration" value="5"/><span></span>
+                    </div>
+                </div>
+                <div class="sheet-flex">
+                    <div class="sheet-col60 sheet-colspace">
+                        <button type="roll" value="&{template:default} {{name=Manipulation}} {{successes=[[(@{Empathy}+@{Manipulation}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Angry}+@{Frightened}+@{Hopeless})|Yes,0})d6>6]]}}">Manipulation (Em)</button>
+                    </div>
+                    <div class="sheet-col40 sheet-statpoints">
+                        <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Manipulation" value="0" checked="checked"/>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Manipulation" value="1"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Manipulation" value="2"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Manipulation" value="3"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Manipulation" value="4"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Manipulation" value="5"/><span></span>
+                    </div>
+                </div>
+                <div class="sheet-flex">
+                    <div class="sheet-col60 sheet-colspace">
+                        <button type="roll" value="&{template:default} {{name=Observation}} {{successes=[[(@{Empathy}+@{Observation}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Angry}+@{Frightened}+@{Hopeless})|Yes,0})d6>6]]}}">Observation (Em)</button>
+                    </div>
+                    <div class="sheet-col40 sheet-statpoints">
+                        <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Observation" value="0" checked="checked"/>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Observation" value="1"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Observation" value="2"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Observation" value="3"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Observation" value="4"/><span></span>
+                        <div class="sheet-floatingbar"></div>
+                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Observation" value="5"/><span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
