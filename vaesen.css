@@ -53,7 +53,26 @@ textarea.sheet-label {
 
 .sheet-hidden {
     display: none !important;
-  }
+}
+
+
+/* type selector */
+
+.sheet-type-input:not([value="character"]) ~ .sheet-type-character,
+.sheet-type-input:not([value="headquarters"]) ~ .sheet-type-headquarters,
+.sheet-type-input:not([value="selector"]) ~ .sheet-type-selector {
+	display: none;
+}
+
+.sheet-type-button {
+  border: 1px #000 solid;
+  padding: 4px;
+  margin: 4px;
+  cursor: pointer;
+  width: 100px;
+  text-align: center;
+  display: block;
+}
 
 /* sections */
 
@@ -94,6 +113,82 @@ textarea.sheet-label {
 .sheet-statpoints {
     display: flex;
     align-items: center;
+}
+
+/* headquarters */
+
+.sheet-auto-expand {
+  position: relative;
+  cursor: text;
+  word-wrap: break-word;
+  line-height: 14px;
+  min-height: 28px;
+}
+
+.sheet-auto-expand span {
+  visibility: hidden;
+  white-space: pre-wrap;
+  display: block;
+}
+
+.sheet-auto-expand textarea {
+  position: absolute;
+  overflow: hidden;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  resize: none;
+  height: 100%;
+  word-wrap: break-word;
+  padding: inherit;
+  font: inherit;
+  color: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  text-align: inherit;
+}
+
+.sheet-history {
+  position: relative;
+  cursor: text;
+  word-wrap: break-word;
+  line-height: 17px;
+  min-height: 34px;
+  background: linear-gradient(transparent 16px, #a7a7a7 1px) 0 0/100% 17px;
+  padding: 0 3px;
+  width: 100%;
+  font-size: 13px;
+}
+
+.sheet-history span {
+  visibility: hidden;
+  white-space: pre-wrap;
+  display: block;
+}
+
+.sheet-history textarea {
+  position: absolute;
+  overflow: hidden;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  resize: none;
+  height: 100%;
+  word-wrap: break-word;
+  padding: inherit;
+  font: inherit;
+  color: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  text-align: inherit;
+}
+
+.sheet-hq-function {
+  width: 100%;
+  cursor: text;
+  word-wrap: break-word;
+  height: 100%;
+  display: block;
 }
 
 /* Fieldsets */
