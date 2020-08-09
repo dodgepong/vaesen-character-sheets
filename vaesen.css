@@ -38,7 +38,40 @@ input[type=text] {
     box-shadow: none;
     min-height: 22px;
     padding: 3px 0 0;
-    margin: 3px 0 0
+    margin: 3px 0 0;
+}
+
+input[type=number] {
+  width: 100%;
+  font-family: inherit;
+  font-size: 1em;
+  color: inherit;
+  text-shadow: inherit;
+  border: none;
+  border-bottom: 1px solid #bbbbbb;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  min-height: 22px;
+  padding: 3px 0 0;
+  margin: 3px 0 0;
+}
+
+select {
+  width: 100%;
+  font-family: inherit;
+  font-size: 1em;
+  color: inherit;
+  text-shadow: inherit;
+  border: none;
+  border-bottom: 1px solid #bbbbbb;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  height: 18px;
+  min-height: 22px;
+  padding: 3px 0 0;
+  margin: 3px 0 0;
 }
 
 .sheet-label,
@@ -244,8 +277,8 @@ textarea.sheet-label {
 
 /* Rollbuttons */
 
-button[type="roll"],
-button[type="action"] {
+button[type="roll"].sheet-skill-button,
+ button[type="action"].sheet-skill-button {
   display: flex;
   border: none;
   margin: 0;
@@ -261,17 +294,17 @@ button[type="action"] {
   z-index: 3;
 }
 
-button[type="roll"].btn::before,
-button[type="action"].btn::before {
+button[type="roll"].sheet-skill-button.btn::before,
+button[type="action"].sheet-skill-button.btn::before {
   content: "";
 }
 
-button[type="roll"]:hover,
-button[type="action"]:hover {
+button[type="roll"].sheet-skill-button:hover,
+button[type="action"].sheet-skill-button:hover {
   color: #666666;
 }
 
-button[type="roll"].btn {
+button[type="roll"].sheet-skill-button.btn {
     text-transform: uppercase;
     font-size: 12px;
     font-weight: bold;
@@ -425,6 +458,9 @@ input.sheet-checkbox {
     width: 33%;
 }
 .sheet-col35 {
+    width: 35%;
+}
+.sheet-col40 {
     width: 35%;
 }
 .sheet-col50 {

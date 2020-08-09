@@ -10,7 +10,7 @@
             <div class="sheet-col70 sheet-colspace">
                 <div class="sheet-header sheet-flex">
                     <div class="sheet-col100">
-                        <input type="text" name="attr_CharacterName"/>
+                        <input type="text" name="attr_character_name"/>
                         <div class="sheet-text sheet-label sheet-title">Name</div>
                     </div>
                     <div class="sheet-col70 sheet-colspace">
@@ -19,7 +19,7 @@
                     </div>
                     <div class="sheet-col30">
                         <input type="text" name="attr_Age"/>
-                        <div class="sheet-text sheet-label sheet-title">Age</div>
+                        <div class="sheet-text sheet-label sheet-title">Age / Age Group</div>
                     </div>
                     <div class="sheet-col100">
                         <input type="text" name="attr_Motivation"/>
@@ -123,21 +123,33 @@
                         <h4>Weapons</h4>
                         <fieldset class="repeating_weapons">
                             <div class="sheet-flex">
-                                <div class="sheet-col55 sheet-colspace">
+                                <div class="sheet-col40 sheet-colspace">
                                     <input type="text" name="attr_WeaponName" />
                                     <div class="sheet-text sheet-label sheet-title">Weapon</div>
                                 </div>
-                                <div class="sheet-col15 sheet-colspace">
-                                    <input type="text" name="attr_WeaponDamage" />
+                                <div class="sheet-col25 sheet-colspace">
+                                    <select name="attr_AttackSkill">
+                                        <option value="@{Physique}+@{Force}" selected="selected">Force</option>
+                                        <option value="@{Physique}+@{CloseCombat}">Close Combat</option>
+                                        <option value="@{Precision}+@{RangedCombat}">Ranged Combat</option>
+                                    </select>
+                                    <div class="sheet-text sheet-label sheet-title">Attack Skill</div>
+                                </div>
+                                
+                                <div class="sheet-col10 sheet-colspace">
+                                    <input type="number" value="0" name="attr_WeaponDamage" />
                                     <div class="sheet-text sheet-label sheet-title">Damage</div>
                                 </div>
-                                <div class="sheet-col15 sheet-colspace">
+                                <div class="sheet-col10 sheet-colspace">
                                     <input type="text" name="attr_WeaponRange" />
                                     <div class="sheet-text sheet-label sheet-title">Range</div>
                                 </div>
-                                <div class="sheet-col15">
-                                    <input type="text" name="attr_WeaponBonus" />
+                                <div class="sheet-col10">
+                                    <input type="number" value="0" name="attr_WeaponBonus" />
                                     <div class="sheet-text sheet-label sheet-title">Bonus</div>
+                                </div>
+                                <div class="sheet-col5 sheet-colspace">
+                                    <button type="roll" value="&{template:default} {{name=Attack with @{WeaponName}}} {{successes=[[(@{AttackSkill}+@{WeaponBonus}+?{Additional Bonus Dice|0}-?{Ignore conditions?|No,(@{Exhausted}+@{Battered}+@{Wounded})|Yes,0})d6>6]]}}" />
                                 </div>
                             </div>
                         </fieldset>
@@ -158,25 +170,15 @@
                         <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Experience" value="4"/><span></span>
                         <div class="sheet-floatingbar"></div>
                         <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Experience" value="5"/><span></span>
-                        <div class="sheet-floatingbar"></div>
-                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Experience" value="6"/><span></span>
-                        <div class="sheet-floatingbar"></div>
-                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Experience" value="7"/><span></span>
-                        <div class="sheet-floatingbar"></div>
-                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Experience" value="8"/><span></span>
-                        <div class="sheet-floatingbar"></div>
-                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Experience" value="9"/><span></span>
-                        <div class="sheet-floatingbar"></div>
-                        <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Experience" value="10"/><span></span>
                     </div>
                 </div>
                 <div class="sheet-section">
                     <h4>Attributes</h4>
                     <div class="sheet-flex">
-                        <div class="sheet-col50 sheet-colspace">
-                            Physique
+                        <div class="sheet-col60 sheet-colspace">
+                            <button class="sheet-skill-button" type="roll" value="&{template:default} {{name=Physique}} {{successes=[[(@{Physique}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Exhausted}+@{Battered}+@{Wounded})|Yes,0})d6>6]]}}">Physique</button>
                         </div>
-                        <div class="sheet-col50 sheet-statpoints">
+                        <div class="sheet-col40 sheet-statpoints">
                             <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Physique" value="0" checked="checked"/>
                             <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Physique" value="1"/><span></span>
                             <div class="sheet-floatingbar"></div>
@@ -190,10 +192,10 @@
                         </div>
                     </div>
                     <div class="sheet-flex">
-                        <div class="sheet-col50 sheet-colspace">
-                            Precision
+                        <div class="sheet-col60 sheet-colspace">
+                            <button class="sheet-skill-button" type="roll" value="&{template:default} {{name=Precision}} {{successes=[[(@{Precision}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Exhausted}+@{Battered}+@{Wounded})|Yes,0})d6>6]]}}">Precision</button>
                         </div>
-                        <div class="sheet-col50 sheet-statpoints">
+                        <div class="sheet-col40 sheet-statpoints">
                             <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Precision" value="0" checked="checked"/>
                             <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Precision" value="1"/><span></span>
                             <div class="sheet-floatingbar"></div>
@@ -207,10 +209,10 @@
                         </div>
                     </div>
                     <div class="sheet-flex">
-                        <div class="sheet-col50 sheet-colspace">
-                            Logic
+                        <div class="sheet-col60 sheet-colspace">
+                            <button class="sheet-skill-button" type="roll" value="&{template:default} {{name=Logic}} {{successes=[[(@{Logic}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Angry}+@{Frightened}+@{Hopeless})|Yes,0})d6>6]]}}">Logic</button>
                         </div>
-                        <div class="sheet-col50 sheet-statpoints">
+                        <div class="sheet-col40 sheet-statpoints">
                             <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Logic" value="0" checked="checked"/>
                             <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Logic" value="1"/><span></span>
                             <div class="sheet-floatingbar"></div>
@@ -224,10 +226,10 @@
                         </div>
                     </div>
                     <div class="sheet-flex">
-                        <div class="sheet-col50 sheet-colspace">
-                            Empathy
+                        <div class="sheet-col60 sheet-colspace">
+                            <button class="sheet-skill-button" type="roll" value="&{template:default} {{name=Empathy}} {{successes=[[(@{Empathy}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Angry}+@{Frightened}+@{Hopeless})|Yes,0})d6>6]]}}">Empathy</button>
                         </div>
-                        <div class="sheet-col50 sheet-statpoints">
+                        <div class="sheet-col40 sheet-statpoints">
                             <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Empathy" value="0" checked="checked"/>
                             <input class="sheet-checkbox sheet-large sheet-fakeradio" type="checkbox" name="attr_Empathy" value="1"/><span></span>
                             <div class="sheet-floatingbar"></div>
@@ -244,11 +246,11 @@
                 <div class="sheet-section">
                     <div class="sheet-flex">
                         <div class="sheet-col50 sheet-colspace">
-                            <div><input type="text" name="attr_Resources"/></div>
+                            <input type="number" value="0" name="attr_Resources" />
                             <div class="sheet-text sheet-label sheet-title">Resources</div>
                         </div>
                         <div class="sheet-col50 ">
-                            <div><input type="text" name="attr_Capital"/></div>
+                            <input type="number" value="0" name="attr_Capital" />
                             <div class="sheet-text sheet-label sheet-title">Capital</div>
                         </div>
 
@@ -311,7 +313,7 @@
                     <h4>Skills</h4>
                     <div class="sheet-flex">
                         <div class="sheet-col60 sheet-colspace">
-                            <button type="roll" value="&{template:default} {{name=Agility}} {{successes=[[(@{Physique}+@{Agility}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Exhausted}+@{Battered}+@{Wounded})|Yes,0})d6>6]]}}">Agility (Ph)</button>
+                            <button class="sheet-skill-button" type="roll" value="&{template:default} {{name=Agility}} {{successes=[[(@{Physique}+@{Agility}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Exhausted}+@{Battered}+@{Wounded})|Yes,0})d6>6]]}}">Agility (Ph)</button>
                         </div>
                         <div class="sheet-col40 sheet-statpoints">
                             <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Agility" value="0" checked="checked"/>
@@ -328,7 +330,7 @@
                     </div>
                     <div class="sheet-flex">
                         <div class="sheet-col60 sheet-colspace">
-                            <button type="roll" value="&{template:default} {{name=Close Combat}} {{successes=[[(@{Physique}+@{CloseCombat}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Exhausted}+@{Battered}+@{Wounded})|Yes,0})d6>6]]}}">Close Combat (Ph)</button>
+                            <button class="sheet-skill-button" type="roll" value="&{template:default} {{name=Close Combat}} {{successes=[[(@{Physique}+@{CloseCombat}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Exhausted}+@{Battered}+@{Wounded})|Yes,0})d6>6]]}}">Close Combat (Ph)</button>
                         </div>
                         <div class="sheet-col40 sheet-statpoints">
                             <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_CloseCombat" value="0" checked="checked"/>
@@ -345,7 +347,7 @@
                     </div>
                     <div class="sheet-flex">
                         <div class="sheet-col60 sheet-colspace">
-                            <button type="roll" value="&{template:default} {{name=Force}} {{successes=[[(@{Physique}+@{Force}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Exhausted}+@{Battered}+@{Wounded})|Yes,0})d6>6]]}}">Force (Ph)</button>
+                            <button class="sheet-skill-button" type="roll" value="&{template:default} {{name=Force}} {{successes=[[(@{Physique}+@{Force}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Exhausted}+@{Battered}+@{Wounded})|Yes,0})d6>6]]}}">Force (Ph)</button>
                         </div>
                         <div class="sheet-col40 sheet-statpoints">
                             <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Force" value="0" checked="checked"/>
@@ -362,7 +364,7 @@
                     </div>
                     <div class="sheet-flex">
                         <div class="sheet-col60 sheet-colspace">
-                            <button type="roll" value="&{template:default} {{name=Medicine}} {{successes=[[(@{Precision}+@{Medicine}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Exhausted}+@{Battered}+@{Wounded})|Yes,0})d6>6]]}}">Medicine (Pr)</button>
+                            <button class="sheet-skill-button" type="roll" value="&{template:default} {{name=Medicine}} {{successes=[[(@{Precision}+@{Medicine}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Exhausted}+@{Battered}+@{Wounded})|Yes,0})d6>6]]}}">Medicine (Pr)</button>
                         </div>
                         <div class="sheet-col40 sheet-statpoints">
                             <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Medicine" value="0" checked="checked"/>
@@ -379,7 +381,7 @@
                     </div>
                     <div class="sheet-flex">
                         <div class="sheet-col60 sheet-colspace">
-                            <button type="roll" value="&{template:default} {{name=Ranged Combat}} {{successes=[[(@{Precision}+@{RangedCombat}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Exhausted}+@{Battered}+@{Wounded})|Yes,0})d6>6]]}}">Ranged Combat (Pr)</button>
+                            <button class="sheet-skill-button" type="roll" value="&{template:default} {{name=Ranged Combat}} {{successes=[[(@{Precision}+@{RangedCombat}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Exhausted}+@{Battered}+@{Wounded})|Yes,0})d6>6]]}}">Ranged Combat (Pr)</button>
                         </div>
                         <div class="sheet-col40 sheet-statpoints">
                             <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_RangedCombat" value="0" checked="checked"/>
@@ -396,7 +398,7 @@
                     </div>
                     <div class="sheet-flex">
                         <div class="sheet-col60 sheet-colspace">
-                            <button type="roll" value="&{template:default} {{name=Stealth}} {{successes=[[(@{Precision}+@{Stealth}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Exhausted}+@{Battered}+@{Wounded})|Yes,0})d6>6]]}}">Stealth (Pr)</button>
+                            <button class="sheet-skill-button" type="roll" value="&{template:default} {{name=Stealth}} {{successes=[[(@{Precision}+@{Stealth}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Exhausted}+@{Battered}+@{Wounded})|Yes,0})d6>6]]}}">Stealth (Pr)</button>
                         </div>
                         <div class="sheet-col40 sheet-statpoints">
                             <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Stealth" value="0" checked="checked"/>
@@ -413,7 +415,7 @@
                     </div>
                     <div class="sheet-flex">
                         <div class="sheet-col60 sheet-colspace">
-                            <button type="roll" value="&{template:default} {{name=Investigation}} {{successes=[[(@{Logic}+@{Investigation}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Angry}+@{Frightened}+@{Hopeless})|Yes,0})d6>6]]}}">Investigation (Lo)</button>
+                            <button class="sheet-skill-button" type="roll" value="&{template:default} {{name=Investigation}} {{successes=[[(@{Logic}+@{Investigation}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Angry}+@{Frightened}+@{Hopeless})|Yes,0})d6>6]]}}">Investigation (Lo)</button>
                         </div>
                         <div class="sheet-col40 sheet-statpoints">
                             <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Investigation" value="0" checked="checked"/>
@@ -430,7 +432,7 @@
                     </div>
                     <div class="sheet-flex">
                         <div class="sheet-col60 sheet-colspace">
-                            <button type="roll" value="&{template:default} {{name=Learning}} {{successes=[[(@{Logic}+@{Learning}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Angry}+@{Frightened}+@{Hopeless})|Yes,0})d6>6]]}}">Learning (Lo)</button>
+                            <button class="sheet-skill-button" type="roll" value="&{template:default} {{name=Learning}} {{successes=[[(@{Logic}+@{Learning}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Angry}+@{Frightened}+@{Hopeless})|Yes,0})d6>6]]}}">Learning (Lo)</button>
                         </div>
                         <div class="sheet-col40 sheet-statpoints">
                             <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Learning" value="0" checked="checked"/>
@@ -447,7 +449,7 @@
                     </div>
                     <div class="sheet-flex">
                         <div class="sheet-col60 sheet-colspace">
-                            <button type="roll" value="&{template:default} {{name=Vigilance}} {{successes=[[(@{Logic}+@{Vigilance}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Angry}+@{Frightened}+@{Hopeless})|Yes,0})d6>6]]}}">Vigilance (Lo)</button>
+                            <button class="sheet-skill-button" type="roll" value="&{template:default} {{name=Vigilance}} {{successes=[[(@{Logic}+@{Vigilance}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Angry}+@{Frightened}+@{Hopeless})|Yes,0})d6>6]]}}">Vigilance (Lo)</button>
                         </div>
                         <div class="sheet-col40 sheet-statpoints">
                             <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Vigilance" value="0" checked="checked"/>
@@ -464,7 +466,7 @@
                     </div>
                     <div class="sheet-flex">
                         <div class="sheet-col60 sheet-colspace">
-                            <button type="roll" value="&{template:default} {{name=Inspiration}} {{successes=[[(@{Empathy}+@{Inspiration}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Angry}+@{Frightened}+@{Hopeless})|Yes,0})d6>6]]}}">Inspiration (Em)</button>
+                            <button class="sheet-skill-button" type="roll" value="&{template:default} {{name=Inspiration}} {{successes=[[(@{Empathy}+@{Inspiration}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Angry}+@{Frightened}+@{Hopeless})|Yes,0})d6>6]]}}">Inspiration (Em)</button>
                         </div>
                         <div class="sheet-col40 sheet-statpoints">
                             <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Inspiration" value="0" checked="checked"/>
@@ -481,7 +483,7 @@
                     </div>
                     <div class="sheet-flex">
                         <div class="sheet-col60 sheet-colspace">
-                            <button type="roll" value="&{template:default} {{name=Manipulation}} {{successes=[[(@{Empathy}+@{Manipulation}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Angry}+@{Frightened}+@{Hopeless})|Yes,0})d6>6]]}}">Manipulation (Em)</button>
+                            <button class="sheet-skill-button" type="roll" value="&{template:default} {{name=Manipulation}} {{successes=[[(@{Empathy}+@{Manipulation}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Angry}+@{Frightened}+@{Hopeless})|Yes,0})d6>6]]}}">Manipulation (Em)</button>
                         </div>
                         <div class="sheet-col40 sheet-statpoints">
                             <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Manipulation" value="0" checked="checked"/>
@@ -498,7 +500,7 @@
                     </div>
                     <div class="sheet-flex">
                         <div class="sheet-col60 sheet-colspace">
-                            <button type="roll" value="&{template:default} {{name=Observation}} {{successes=[[(@{Empathy}+@{Observation}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Angry}+@{Frightened}+@{Hopeless})|Yes,0})d6>6]]}}">Observation (Em)</button>
+                            <button class="sheet-skill-button" type="roll" value="&{template:default} {{name=Observation}} {{successes=[[(@{Empathy}+@{Observation}+?{Bonus Dice|0}-?{Ignore conditions?|No,(@{Angry}+@{Frightened}+@{Hopeless})|Yes,0})d6>6]]}}">Observation (Em)</button>
                         </div>
                         <div class="sheet-col40 sheet-statpoints">
                             <input class="sheet-hidden sheet-fakeradio" type="checkbox" name="attr_Observation" value="0" checked="checked"/>
