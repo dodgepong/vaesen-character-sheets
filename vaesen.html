@@ -96,7 +96,7 @@
                                     <div class="sheet-text sheet-label sheet-title">Item</div>
                                 </div>
                                 <div class="sheet-col15">
-                                    <input type="text" name="attr_EquipmentBonus" />
+                                    <input type="number" value="0" name="attr_EquipmentBonus" />
                                     <div class="sheet-text sheet-label sheet-title">Bonus</div>
                                 </div>
                             </div>
@@ -135,7 +135,6 @@
                                     </select>
                                     <div class="sheet-text sheet-label sheet-title">Attack Skill</div>
                                 </div>
-                                
                                 <div class="sheet-col10 sheet-colspace">
                                     <input type="number" value="0" name="attr_WeaponDamage" />
                                     <div class="sheet-text sheet-label sheet-title">Damage</div>
@@ -245,11 +244,14 @@
                 </div>
                 <div class="sheet-section">
                     <div class="sheet-flex">
-                        <div class="sheet-col50 sheet-colspace">
+                        <div class="sheet-col15 sheet-colspace">
+                            <button type="roll" value="&{template:default} {{name=Resources}} {{successes=[[@{Resources}d6>6]]}}" />
+                        </div>
+                        <div class="sheet-col45 sheet-colspace">
                             <input type="number" value="0" name="attr_Resources" />
                             <div class="sheet-text sheet-label sheet-title">Resources</div>
                         </div>
-                        <div class="sheet-col50 ">
+                        <div class="sheet-col40 ">
                             <input type="number" value="0" name="attr_Capital" />
                             <div class="sheet-text sheet-label sheet-title">Capital</div>
                         </div>
